@@ -1,19 +1,19 @@
-const startBtnWork = document.getElementById('startBtn').addEventListener('click',function(){
-    let num = 0;
-    setInterval(() => {
-        setNum = num++
-        document.getElementById('showValue').innerText = setNum;
-    }, 1000)
+var showClock ;
+function startBtn(){
+    showClock = setInterval(starClock,500);
+}
+function starClock(){
+    document.getElementById('showValue').innerText = new Date().toLocaleTimeString();
 
-})
-
-
-// const startBtnWork = setInterval() => {
-
-// }
-
+}
+// stop 
 function stopBtn(){
+    clearInterval(showClock);
+}
+// reset 
+function resetBtn(){
+    clearInterval(showClock);
+    document.getElementById('showValue').innerText = "0:00:00 PM";
 
-    clearInterval(startBtnWork);
 
 }
